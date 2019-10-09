@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import LoginForm from "./components/LoginForm";
 import TwitterMessage from "./components/TwitterMessage";
+import PoemWriter from "./components/PoemWriter";
 
 class App extends Component {
 
@@ -17,6 +18,9 @@ class App extends Component {
 
         <h2><pre>LoginForm</pre></h2>
         <LoginForm handleLogin={this.login} />
+
+        <h2><pre>PoemWriter</pre></h2>
+        <PoemWriter />
 
       </div>
     )
