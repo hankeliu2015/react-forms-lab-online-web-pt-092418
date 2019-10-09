@@ -5,22 +5,18 @@ import TwitterMessage from "./components/TwitterMessage";
 class App extends Component {
 
   login = ({ username, password }) => {
+    alert(`Logging in ${username} with password ${password}`);
     console.log(`Logging in ${username} with password ${password}`);
   };
 
   render() {
     return (
       <div>
-
-        <h1>
-          <pre>LoginForm</pre>
-        </h1>
-        <LoginForm handleLogin={this.login} />
-
-        <h1>
-          <pre>TwitterMessage</pre>
-        </h1>
+        <h2><pre>TwitterMessage</pre></h2>
         <TwitterMessage maxChars={140} />
+
+        <h2><pre>LoginForm</pre></h2>
+        <LoginForm handleLogin={this.login} />
 
       </div>
     )

@@ -18,12 +18,15 @@ class LoginForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    if (!this.state.username || !this.state.password) return
-    this.props.handleLogin(this.state)
+    // const {username, password} = this.state; no need this. the deconstructing is take care of by login function in app.js
+    if (this.state.username && this.state.password) {
+      return this.props.handleLogin(this.state)
+    }
     // have to use above code to get test passed.
     // if (!this.state.username || !this.state.password) {
     //   return this.props.handleLogin(this.state)
     // }
+
   }
 
   render() {
@@ -40,6 +43,9 @@ class LoginForm extends React.Component {
             Password
             <input id="password" name="password" type="password" onChange={this.inputChange} value={this.state.password} />
           </label>
+        </div>
+        <div>
+          <button type='submit'>Log in</button>
         </div>
 
       </form>
